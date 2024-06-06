@@ -1,0 +1,77 @@
+Pseudocode
+Initialize the Game
+Import necessary libraries (pygame, random).
+Initialize Pygame.
+Set screen dimensions (screen_width, screen_height).
+Create the game screen with the specified dimensions.
+Set the game window caption to "Space Rescue".
+Define colors (white, black).
+Load images:
+spaceship_img
+astronaut_img
+debris_img
+background_img
+Scale the images to appropriate sizes.
+Define Classes
+Spaceship Class:
+
+Initialize the spaceship:
+Set the image to spaceship_img.
+Get the rectangle of the image.
+Set the initial position to the center bottom of the screen.
+Set the movement speed.
+Update the spaceship's position based on user input:
+If left arrow key is pressed and spaceship is within screen boundaries, move left.
+If right arrow key is pressed and spaceship is within screen boundaries, move right.
+Astronaut Class:
+
+Initialize the astronaut:
+Set the image to astronaut_img.
+Get the rectangle of the image.
+Reset the astronaut's position and speed.
+Reset the astronaut:
+Set the y-coordinate to 10 (top of the screen).
+Set the x-coordinate to a random value within screen width.
+Set the falling speed to a random value between minSpeed and maxSpeed.
+Update the astronaut's position:
+Move the astronaut down by its speed.
+If the astronaut leaves the bottom of the screen, reset its position.
+Debris Class:
+
+Initialize the debris:
+Set the image to debris_img.
+Get the rectangle of the image.
+Reset the debris's position and speed.
+Reset the debris:
+Set the y-coordinate to 10 (top of the screen).
+Set the x-coordinate to a random value within screen width.
+Set the falling speed to a random value between minSpeed and maxSpeed.
+Update the debris's position:
+Move the debris down by its speed.
+If the debris leaves the bottom of the screen, reset its position.
+Create Sprite Groups
+Create a group for all sprites.
+Create a group for astronauts.
+Create a group for debris.
+Create Sprite Instances
+Create an instance of Spaceship and add it to the all_sprites group.
+Create multiple instances of Astronaut and add them to the all_sprites and astronauts groups.
+Create multiple instances of Debris and add them to the all_sprites and debris groups.
+Main Game Loop
+Set running to True.
+Create a clock object to manage the frame rate.
+While running:
+Check for events:
+If the event type is QUIT, set running to False.
+Update all sprites.
+Check for collisions between spaceship and astronauts:
+If a collision occurs, reset the collided astronaut.
+Check for collisions between spaceship and debris:
+If a collision occurs, handle it (e.g., print a message or trigger game over).
+Draw everything:
+Blit the background image onto the screen.
+Draw all sprites onto the screen.
+Update the display.
+Cap the frame rate to 60 frames per second.
+Quit the Game
+Quit Pygame.
